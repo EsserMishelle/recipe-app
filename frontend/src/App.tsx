@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useRef, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { searchRecipes } from "./API";
 import { Recipe } from "./types";
 import RecipeCard from "./components/RecipeCard";
@@ -15,7 +15,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [error, setError] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [, setIsLoading] = useState<boolean>(false);
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | undefined>(
     undefined
   );
