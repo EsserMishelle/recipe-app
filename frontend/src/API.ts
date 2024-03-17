@@ -3,7 +3,7 @@
 import {Recipe} from "./types"
 //search by ingredients or a particular recipe
 export const searchRecipes = async (searchTerm: string, page: number) => {
-    const baseURL = new URL("http://localhost:5000/api/recipes/search");
+    const baseURL = new URL("https://recipe-app-av5t.onrender.com/api/recipes/search");
     // const baseURL = new URL("http://localhost:5000/api/recipes/search");
 
     baseURL.searchParams.append("searchTerm", searchTerm);
@@ -21,7 +21,7 @@ export const searchRecipes = async (searchTerm: string, page: number) => {
 
   //get recipe summary
   export const getRecipeSummary = async (recipeId: string) => {
-    const url = new URL(`http://localhost:5000/api/recipes/${recipeId}/summary`);
+    const url = new URL(`https://recipe-app-av5t.onrender.com/api/recipes/${recipeId}/summary`);
     // const url = new URL(`http://localhost:5000/api/recipes/${recipeId}/summary`);
     const response = await fetch(url);
   
@@ -62,7 +62,7 @@ export const addFavoriteRecipe = async (recipe: Recipe) => {
 
 //remove or delete a favorite recipe
 export const removeFavoriteRecipe = async(recipe: Recipe) => {
-  // const url = new URL(`http://localhost:5000/api/recipes/favorite`)
+  
   const url = new URL(`https://recipe-app-av5t.onrender.com/api/recipes/favorite`)
   // const url = new URL(`http://localhost:5000/api/recipes/favorite`)
   const body ={
