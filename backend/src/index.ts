@@ -50,7 +50,7 @@ app.post('/api/recipes/favorite', async(req, res)=> {
 })
 
 //get a favorite recipe route
-app.get('/api/recipes/favorite', async(_req, res) => {
+app.get('/api/recipes/favorite', async(req, res) => {
 try{
     const favoriteRecipes= await prismaClient.favoriteRecipe.findMany()
      const recipeIds= favoriteRecipes.map((recipe)=> 
