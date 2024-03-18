@@ -13,12 +13,7 @@ app.use(cors());
 
 const prismaClient= new PrismaClient()
 
-app.use((req, res, next) => {
-  if (req.path.endsWith('.js')) {
-    res.type('application/javascript');
-  }
-  next();
-});
+
 //search route
 app.get("/api/recipes/search", async (req, res) => {
   const searchTerm = req.query.searchTerm as string;
